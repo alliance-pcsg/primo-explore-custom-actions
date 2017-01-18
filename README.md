@@ -20,7 +20,7 @@ from inside your package directory (e.g. `/primo-explore/custom/LCC_NEWUI`), run
 npm install primo-explore-custom-actions
 ```
 
-to enable the button, edit your `2_options.js` (or another file in the package's `js` directory) and add the following lines:
+to add custom actions, edit your `2_options.js` (or another file in the package's `js` directory) and add the following lines:
 
 ```javascript
 insertActions([{
