@@ -39,7 +39,27 @@ insertActions([{
         name: 'ic_open_in_new_24px'
     },
     action: "http://google.com/"
-}]);
+},
+{
+    name: "PNX",
+    type: 'template',        
+    icon: {
+        set: 'action',
+        name: 'ic_stars_24px'
+    },
+    action: "/primo_library/libweb/jqp/record/{recordId}.pnx"
+},
+{
+    name: "My other link",
+    type: 'template',        
+    templateVar: ['test', 'me'],
+    icon: {
+        set: 'action',
+        name: 'ic_stars_24px'
+    },
+    action: "http://www.example.com/{0}/{1}"
+}
+]);
 ```
 
 ### configuring custom actions
@@ -61,6 +81,7 @@ this code works by supplying a list of action objects you wish to be included. e
   - currently supported types:
 
     - 'rap' - indicates the action is a "report a problem" action, so information about the current primo record should be sent along with the link
+    - 'template' - action is a template in the form of 'http://www.example.com/{0}/{1}/{recordId}' where 0,1,... is an index on the **templateVar** property. {recordId} can be used without the **templateVar** property.
 
 - `icon`:
 
