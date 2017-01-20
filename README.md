@@ -100,15 +100,18 @@ this code works by supplying a list of action objects you wish to be included. e
   - a url for a page that the action will open and/or send data to
 
     - links will always open in a new window
-    - if it's a "report a problem" action (type: 'rap'), the docID of the record will be appended to this url when the button is clicked
-    - you can use this functionality to send the docID as an http GET parameter by formatting your "report a problem" url as above, where it would be sent as record_id
+    - if it's a "template" action (type: 'template'), {recordId} will be replaced with the item's record ID when the link is clicked
+    - you can use this functionality to send the docID as an http GET parameter by formatting your "report a problem" url as above
+    - other parameters can be sent as {0}, {1}, etc. to represent their index in the `templateVar` array, as seen above
 
 you can edit the code in your `2_options.js` to change these values.
 
-adding the above example code would add two actions:
+adding the above example code would add four actions (not recommended, as space is limited on the actions menu):
 
-- a link to google, using the icon "open in new window" from the icon set "action"
-- a report problem button using the icon "report problem" from the icon set "action"
+- a button to report a problem, which will go to a given page and append the recordId to the URL
+- a link to google
+- a button which will view the record's PNX, by appending the recordId to the url
+- a link that will visit example.com/test/me, because 'test' and 'me' are provided as `templateVar`
 
 ### uninstalling the button
 
