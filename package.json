@@ -1,6 +1,6 @@
 {
   "name": "primo-explore-custom-actions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "adds custom actions to primo's actions menu.",
   "main": "js/actions.js",
   "scripts": {
