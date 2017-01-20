@@ -25,12 +25,12 @@ to add custom actions, edit your `2_options.js` (or another file in the package'
 ```javascript
 insertActions([{
     name: "Report Problem",
-    type: "rap",
+    type: "template",
     icon: {
         set: 'action',
         name: 'ic_report_problem_24px'
     },
-    action: "http://my.institution.edu/report_problem?record_id="
+    action: "http://my.institution.edu/report_problem?record_id={recordId}"
 },
 {
     name: "My Link",
@@ -41,7 +41,7 @@ insertActions([{
     action: "http://google.com/"
 },
 {
-    name: "PNX",
+    name: "Open PNX",
     type: 'template',        
     icon: {
         set: 'action',
@@ -80,8 +80,7 @@ this code works by supplying a list of action objects you wish to be included. e
   - if not specified, the function will assume the action is a simple link.
   - currently supported types:
 
-    - 'rap' - indicates the action is a "report a problem" action, so information about the current primo record should be sent along with the link
-    - 'template' - action is a template in the form of 'http://www.example.com/{0}/{1}/{recordId}' where 0,1,... is an index on the **templateVar** property. {recordId} can be used without the **templateVar** property.
+    - 'template' - action is a template in the form of '<http://www.example.com/{0}/{1}/{recordId}>' where 0,1,... is an index on the **templateVar** property. {recordId} can be used without the **templateVar** property.
 
 - `icon`:
 

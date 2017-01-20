@@ -22,22 +22,15 @@ function insertActions(actions) {
                         prmActionCtrl.actionListService.actionsToDisplay.unshift(action.slug);
                         prmActionCtrl.actionListService.actionsToIndex[action.slug] = action.index;
                     }
-                    if (action.type === 'rap') {
-                        action.action += prmActionCtrl.item.pnx.search.recordid[0]; // adds the docID as a parameter for report a problem usage
-                    }
-
                     if (action.type === 'template') {
                       if (action.hasOwnProperty('templateVar')) {
                           action.action = action.action.replace(/{\d}/g, (r) => action.templateVar[r.replace(/[^\d]/g,'')]);
                       }
-
                       action.action = action.action.replace(/{recordId}/g, (r) => prmActionCtrl.item.pnx.search.recordid[0]);
                     }
-
                     prmActionCtrl.onToggle[action.slug] = function(){
                         window.open(action.action, '_blank'); // opens the url in a new window
                     };
-
             },
             setCustomActionContainer: function(mdTabsCtrl, action) { // for further review...
             },
