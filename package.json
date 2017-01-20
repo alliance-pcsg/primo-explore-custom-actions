@@ -1,25 +1,25 @@
 {
-    "name": "primo-explore-custom-actions",
-    "version": "1.0.0",
-    "description": "adds custom actions to primo's actions menu.",
-    "main": "js/actions.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/Alliance-PCJWG/primo-explore-custom-actions.git"
-    },
-    "keywords": [
-        "primo-explore",
-        "primo",
-        "ex",
-        "libris"
-    ],
-    "author": "Nick Budak",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/Alliance-PCJWG/primo-explore-custom-actions/issues"
-    },
-    "homepage": "https://github.com/Alliance-PCJWG/primo-explore-custom-actions#readme"
+  "name": "primo-explore-custom-actions",
+  "version": "1.0.1",
+  "description": "adds custom actions to primo's actions menu.",
+  "main": "js/actions.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alliance-PCJWG/primo-explore-custom-actions.git"
+  },
+  "keywords": [
+    "primo-explore",
+    "primo",
+    "ex",
+    "libris"
+  ],
+  "author": "Nick Budak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alliance-PCJWG/primo-explore-custom-actions/issues"
+  },
+  "homepage": "https://github.com/Alliance-PCJWG/primo-explore-custom-actions#readme"
 }
