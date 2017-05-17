@@ -47,7 +47,7 @@ insertActions([{
         set: 'action',
         name: 'ic_stars_24px'
     },
-    action: "/primo_library/libweb/jqp/record/{recordId}.pnx"
+    action: "/primo_library/libweb/jqp/record/{pnx.control.recordid}.pnx"
 },
 {
     name: "My other link",
@@ -80,7 +80,7 @@ this code works by supplying a list of action objects you wish to be included. e
   - if not specified, the function will assume the action is a simple link.
   - currently supported types:
 
-    - 'template' - action is a template in the form of '<http://www.example.com/{0}/{1}/{recordId}>' where 0,1,... is an index on the **templateVar** property. {recordId} can be used without the **templateVar** property.
+    - 'template' - action is a template in the form of '<http://www.example.com/{0}/{1}/{recordId}>' where 0,1,... is an index on the **templateVar** property. {recordId} is a shortcut to 'pnx.search.recordid[0]' can be used without the **templateVar** property this means you have full access to any pnx-field.
 
 - `icon`:
 
