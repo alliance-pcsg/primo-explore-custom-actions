@@ -1,9 +1,9 @@
 # primo-explore-custom-actions
 
-<!-- ![Build Status](https://api.travis-ci.org/Alliance-PCJWG/primo-explore-clickable-logo.svg?branch=master) -->
+[![npm version](https://img.shields.io/npm/v/primo-explore-custom-actions.svg)](https://www.npmjs.com/package/primo-explore-custom-actions)
 
 ## Features
-Custom links can be added to the actions menu visible on Primo brief results and full display. Links can be dynamically formed using template variables, and can extract properties of the item's PNX record and apply them to the link URL.
+Custom links can be added to the actions menu visible on Primo brief results and full display. Links can extract properties of the item's PNX record and apply them to the link URL.
 
 ### Screenshot
 ![screenshot](screenshot.png)
@@ -20,7 +20,7 @@ Custom links can be added to the actions menu visible on Primo brief results and
     ```
 4. Install this package:
     ```
-    npm install primo-explore-custom-actions --save-dev
+    npm install primo-explore-custom-actions --save
     ```
 
 ## Usage
@@ -35,49 +35,42 @@ Note: If you're using the `--browserify` build option, you will need to first im
 import 'primo-explore-custom-actions';
 ```
 
-You can configure the module by passing it an array of action objects to be added. All properties except `type` are required.
+You can add new actions by adding `<custom-action>` elements to the template of `prmActionListAfter`. Each element needs the properties below:
 
-**n.b.** more than three actions will likely cause undesirable cropping effects.
+| name | type | usage |
+|---|---|---|
+| `name` | string | a short, unique name for the action. don't include whitespace characters. |
+| `label` | string | the name that will display on the action button. whitespace ok. |
+| `index` | integer | where to insert the action. 0 would be "first", 1 would be "second", etc.|
+| `icon` | string | the icon on the button. must be chosen from <https://material.io/icons/>. should be in the form "ic_icon_name_with_underscores_24px". some icons may not display. |
+| `icon-set` | string | the set of icons from which the above icon is drawn.|
+| `link` | string | URL to open when the action is clicked. supports templating (see below). |
 
-| name     | type   | usage                                                                                                                                                                                                                    |
-|----------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `name`   | string | the name of the action as it will appear on the link in the menu.                                                                                                                                                        |
-| `type`   | object | if present, determines what type of action is being added (simple link, problem reporter, etc). see details below below.                                                                                                       |
-| `icon`   | object | defines the icon for the link. must be chosen from <https://material.io/icons/>. you need to specify both the name of the action "set" (see link) and the icon itself, in the form "ic_icon_name_with_underscores_24px". some icons may not display. |
-| `action` | string | url for the link. always opens in a new window. see below for details on using templates in this property.                                                                                                               |
+### Templating
 
-#### Templates
-
-When using a 'template' action (type: 'template'), {recordId} will be replaced with the item's record ID when the link is clicked. You can use this functionality to send the docID as an http GET parameter by formatting your "report a problem" url as in the example. Other parameters can be sent as {0}, {1}, etc. to represent their index in the templateVar array.
-
-If the 'template' property isn't present, the link will be used as-is.
+You can create interpolation expressions using `{ }` in the link text and they will be replaced with corresponding values taken from the item - for example, `{pnx.search.recordid[0]}` would become the recordID of the item, taken from the pnx.
 
 ### Example
 
-The example below will generate the configuration visible in the screenshot above. It adds a "report problem" link that will navigate to the institution's "report problem" form and append the record ID as a GET parameter, and a link that will open the given record's PNX for viewing.
+The example below will generate a configuration similar to that visible in the screenshot above. It adds a "report problem" link that will navigate to the institution's "report problem" form and append the record ID as a GET parameter, and a link that will open the given record's PNX for viewing.
 
 ```js
+var app = angular.module('viewCustom', ['customActions'])
 
-app.constant('customActions', [
-  {
-    name: "Report Bug",
-    type: "template",
-    icon: {
-      set: "action",
-      name: "ic_bug_report_24px"
-    },
-    action: "http://my.institution.edu/report_problem?record_id={recordId}"
-  },
-  {
-    name: "Open PNX",
-    type: 'template',
-    icon: {
-        set: 'action',
-        name: 'ic_open_in_new_24px'
-    },
-    action: "/primo_library/libweb/jqp/record/{recordId}.pnx"
-  }
-])
+app.component('prmActionListAfter', {
+  template: `<custom-action name="open_pnx"
+                            label="Open PNX"
+                            index=8
+                            icon="ic_find_in_page_24px"
+                            icon-set="action"
+                            link="/primo_library/libweb/jqp/record/{pnx.search.recordid[0]}.pnx" />
+            <custom-action  name="report_bug"
+                            label="Report Bug"
+                            index=7
+                            icon="ic_bug_report_24px"
+                            icon-set="action"
+                            link="http://my.institution.edu/report_problem?record_id={pnx.search.recordid[0]}" />`
+})
 ```
 
 <!-- ## Running tests

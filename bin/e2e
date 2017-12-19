@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -e
+
+trap stop_server SIGINT SIGTERM
+
+function stop_server {
+    printf "\nShutting down gracefully...\n"
+    docker-compose down
+    exit 0
+}
+
+docker-compose up -d
+sleep 5
+webdriver-manager start

@@ -1,0 +1,12 @@
+{
+  "extends": "google",
+  "rules": {
+    "semi": [1, "never"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 7
+  },
+  "env": {
+    "browser": true
+  }
+}
