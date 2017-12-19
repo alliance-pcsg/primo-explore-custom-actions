@@ -1,0 +1,24 @@
+const gulp = require('gulp')
+const concat = require('gulp-concat')
+const babel = require('gulp-babel')
+const lint = require('gulp-eslint')
+
+gulp.task('lint', function() {
+  return gulp.src('src/**/*.js')
+    .pipe(lint())
+    .pipe(lint.format())
+    .pipe(lint.failOnError())
+})
+
+gulp.task('build', ['lint'], function() {
+  return gulp.src(['src/main.js', 'src/js/*.js'])
+    .pipe(concat('module.js'))
+    .pipe(babel())
+    .pipe(gulp.dest('dist'))
+})
+
+gulp.task('watch', function() {
+  return gulp.watch('src/**/*.js', ['build'])
+})
+
+gulp.task('default', ['watch'])
