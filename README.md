@@ -22,6 +22,7 @@ Custom links can be added to the actions menu visible on Primo brief results and
     ```
     npm install primo-explore-custom-actions --save
     ```
+Alternatively, just copy the contents of `dist/module.js` into your `custom.js` file.
 
 ## Usage
 Once this package is installed, add `customActions` as a dependency for your custom module definition.
