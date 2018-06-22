@@ -24,4 +24,4 @@ gulp.task('watch', function() {
   return gulp.watch('src/**/*.js', ['build'])
 })
 
-options.watch ? gulp.task('default', ['watch']) : gulp.task('default', ['build'])
+gulp.task('default', options.watch ? ['watch'] : ['build'])
