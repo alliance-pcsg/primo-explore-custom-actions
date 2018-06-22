@@ -5,7 +5,8 @@
   "main": "dist/module.js",
   "scripts": {
     "start": "bin/run",
-    "test": "babel src --out-dir dist && karma start --single-run"
+    "test": "gulp && karma start --single-run",
+    "test:chrome-debugger": "gulp && karma start --browsers=Chrome --single-run=false --debug"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,8 @@
     "gulp-eslint": "^4.0.0",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
+    "karma-babel-preprocessor": "^7.0.0",
+    "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.1",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",

@@ -15,18 +15,21 @@ module.exports = (config) => {
       'test/**/*.spec.js',
     ],
     preprocessors: {
-      'test/**/*.js': ['webpack', 'sourcemap'],
+      'test/**/*.spec.js': [
+        'babel',
+        'sourcemap',
+      ],
     },
-    webpack: {
-      mode: 'development',
-      module: {
-        rules: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
-      },
-      devtool: 'inline-source-map',
-    },
+  //   webpack: {
+  //     mode: 'development',
+  //     module: {
+  //       rules: [
+  //         {
+  //           loader: 'babel-loader',
+  //         },
+  //       ],
+  //     },
+  //     devtool: 'inline-source-map',
+  //   },
   })
 }
