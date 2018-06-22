@@ -2,6 +2,9 @@ const gulp = require('gulp')
 const concat = require('gulp-concat')
 const babel = require('gulp-babel')
 const lint = require('gulp-eslint')
+const minimist = require('minimist')
+
+const options = minimist(process.argv)
 
 gulp.task('lint', function() {
   return gulp.src('src/**/*.js')
@@ -21,4 +24,4 @@ gulp.task('watch', function() {
   return gulp.watch('src/**/*.js', ['build'])
 })
 
-gulp.task('default', ['watch'])
+options.watch ? gulp.task('default', ['watch']) : gulp.task('default', ['build'])
