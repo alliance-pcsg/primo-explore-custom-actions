@@ -29,7 +29,6 @@
   "devDependencies": {
     "angular": "^1.6.7",
     "angular-mocks": "^1.6.7",
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
@@ -46,9 +45,7 @@
     "karma-jasmine": "^1.1.1",
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-spec-reporter": "^0.0.32",
-    "karma-webpack": "^3.0.0",
-    "webpack": "^4.12.0"
+    "karma-spec-reporter": "^0.0.32"
   },
   "dependencies": {}
 }
