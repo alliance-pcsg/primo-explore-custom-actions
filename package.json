@@ -5,8 +5,9 @@
   "main": "dist/module.js",
   "scripts": {
     "start": "bin/run",
-    "test": "gulp && karma start --single-run",
-    "test:chrome-debugger": "gulp && karma start --browsers=Chrome --single-run=false --debug"
+    "test:base": "karma start",
+    "test": "gulp && yarn test:base --single-run",
+    "test:chrome-debugger": "yarn test --browsers=Chrome --single-run=false --debug"
   },
   "repository": {
     "type": "git",

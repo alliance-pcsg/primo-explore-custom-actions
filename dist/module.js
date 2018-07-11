@@ -48,8 +48,8 @@ angular.module('customActions').factory('customActions', function () {
      */
     // TODO coerce action.index to be <= requiredActionsList.length
     addAction: function addAction(action, ctrl) {
+      this.addActionIcon(action, ctrl);
       if (!this.actionExists(action, ctrl)) {
-        this.addActionIcon(action, ctrl);
         ctrl.actionListService.requiredActionsList.splice(action.index, 0, action.name);
         ctrl.actionListService.actionsToIndex[action.name] = action.index;
         ctrl.actionListService.onToggle[action.name] = action.onToggle;
