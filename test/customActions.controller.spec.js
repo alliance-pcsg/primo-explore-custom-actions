@@ -52,7 +52,6 @@ describe('customAction component (controller)', () => {
 
   describe('$onInit', () => {
     beforeEach(() => {
-      controller
       controller.$onInit()
     })
 
@@ -69,6 +68,16 @@ describe('customAction component (controller)', () => {
 
     it('should addAction', () => {
       expect(customActionsFactory.addAction).toHaveBeenCalled()
+    })
+  })
+
+  describe('$onDestroy', () => {
+    beforeEach(() => {
+      controller.$onDestroy()
+    })
+
+    it('should removeAction', () => {
+      expect(customActionsFactory.removeAction).toHaveBeenCalled()
     })
   })
 })

@@ -149,6 +149,10 @@ describe('customActions factory', () => {
         customActionsFactory.addAction(newAction, ctrl)
       })
 
+      it('should addActionIcon', () => {
+        expect(customActionsFactory.addActionIcon).toHaveBeenCalled()
+      })
+
       it('shouldn\'t modify ctrl', () => {
         expect(ctrl).toEqual(origCtrl)
       })
@@ -229,9 +233,7 @@ describe('customActions factory', () => {
 
     it('should return a function', () => {
       const result = processLinkTemplate(link, item)
-      // source: https://stackoverflow.com/a/6000016/8603212
-      const isFunction = !!(result && result.constructor && result.call && result.apply)
-      expect(isFunction).toBe(true)
+      expect(typeof result === 'function').toBe(true)
     })
 
     it('function should call window.open', () => {
