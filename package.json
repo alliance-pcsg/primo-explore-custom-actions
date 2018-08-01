@@ -6,7 +6,7 @@
   "scripts": {
     "start": "bin/run",
     "test:base": "karma start",
-    "test": "gulp && yarn test:base --single-run",
+    "test": "yarn gulp && yarn test:base --single-run",
     "test:chrome-debugger": "yarn test --browsers=Chrome --single-run=false --debug"
   },
   "repository": {
@@ -31,11 +31,10 @@
     "angular": "^1.6.7",
     "angular-mocks": "^1.6.7",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "eslint": "^4.13.1",
     "eslint-config-google": "^0.9.1",
-    "gulp": "^4.0.0",
+    "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^4.0.0",
