@@ -47,7 +47,7 @@ describe('customActions factory', () => {
     })
 
     it('should be defined', () => {
-      expect(addActionIcon).toBeDefined();
+      expect(addActionIcon).toBeDefined()
     })
 
     it('should add label to ctrl.actionLabelNamesMap[actionName]', () => {
@@ -81,19 +81,22 @@ describe('customActions factory', () => {
       }
     })
 
-    beforeEach(() => {
-      removeActionIcon({name: 'targetAction'}, ctrl)
+    it('should be defined', () => {
+      expect(removeActionIcon).toBeDefined()
     })
 
     it('should remove action.name from actionLabelNamesMap', () => {
+      removeActionIcon({name: 'targetAction'}, ctrl)
       expect(ctrl.actionLabelNamesMap.targetAction).not.toBeDefined()
     })
 
     it('should remove action.name from actionIconNamesMap', () => {
+      removeActionIcon({name: 'targetAction'}, ctrl)
       expect(ctrl.actionIconNamesMap.targetAction).not.toBeDefined()
     })
 
     it('should remove action.name from actionIcons', () => {
+      removeActionIcon({name: 'targetAction'}, ctrl)
       expect(ctrl.actionIcons.targetAction).not.toBeDefined()
     })
   })

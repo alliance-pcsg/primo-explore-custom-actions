@@ -6,7 +6,7 @@
   "scripts": {
     "start": "bin/run",
     "test:base": "karma start",
-    "test": "yarn gulp && yarn test:base --single-run",
+    "test": "gulp && yarn test:base --single-run",
     "test:chrome-debugger": "yarn test --browsers=Chrome --single-run=false --debug"
   },
   "repository": {
