@@ -1,6 +1,6 @@
 {
   "name": "@orbis-cascade/primo-explore-custom-actions",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "adds custom actions to primo-explore's actions menu.",
   "main": "dist/module.js",
   "scripts": {
