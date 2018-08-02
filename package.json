@@ -1,5 +1,5 @@
 {
-  "name": "primo-explore-custom-actions",
+  "name": "@orbis-cascade/primo-explore-custom-actions",
   "version": "3.1.0",
   "description": "adds custom actions to primo-explore's actions menu.",
   "main": "dist/module.js",
@@ -21,7 +21,7 @@
     "primo-explore",
     "exlibris"
   ],
-  "author": "Nick Budak <budak@lclark.edu>",
+  "author": "Nick Budak <nbudak@princeton.edu>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alliance-pcsg/primo-explore-custom-actions/issues"
