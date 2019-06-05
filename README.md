@@ -1,6 +1,6 @@
 # primo-explore-custom-actions
 
-[![npm version](https://img.shields.io/npm/v/primo-explore-custom-actions.svg)](https://www.npmjs.com/package/primo-explore-custom-actions)
+[![npm version](https://img.shields.io/npm/v/@orbis-cascade/primo-explore-custom-actions.svg)](https://www.npmjs.com/package/@orbis-cascade/primo-explore-custom-actions)
 
 ## Features
 Custom links can be added to the actions menu visible on Primo brief results and full display. Links can extract properties of the item's PNX record and apply them to the link URL.
