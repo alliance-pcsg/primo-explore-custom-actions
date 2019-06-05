@@ -1,8 +1,3 @@
-'use strict';
-
-angular.module('customActions', []);
-
-/* eslint-disable max-len */
 angular.module('customActions').component('customAction', {
   bindings: {
     name: '@',

@@ -2,13 +2,8 @@
   "name": "@orbis-cascade/primo-explore-custom-actions",
   "version": "3.1.1",
   "description": "adds custom actions to primo-explore's actions menu.",
-  "main": "dist/module.js",
-  "scripts": {
-    "start": "bin/run",
-    "test:base": "karma start",
-    "test": "gulp && yarn test:base --single-run",
-    "test:chrome-debugger": "yarn test --browsers=Chrome --single-run=false --debug"
-  },
+  "main": "index.js",
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alliance-pcsg/primo-explore-custom-actions.git"
@@ -27,25 +22,5 @@
     "url": "https://github.com/alliance-pcsg/primo-explore-custom-actions/issues"
   },
   "homepage": "https://github.com/alliance-pcsg/primo-explore-custom-actions#readme",
-  "devDependencies": {
-    "angular": "^1.6.7",
-    "angular-mocks": "^1.6.7",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "eslint": "^4.13.1",
-    "eslint-config-google": "^0.9.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-eslint": "^4.0.0",
-    "jasmine-core": "^2.8.0",
-    "karma": "^1.7.1",
-    "karma-babel-preprocessor": "^7.0.0",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.1",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "karma-sourcemap-loader": "^0.3.7",
-    "karma-spec-reporter": "^0.0.32"
-  },
   "dependencies": {}
 }
