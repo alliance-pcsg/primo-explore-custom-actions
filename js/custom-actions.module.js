@@ -1,4 +1,4 @@
-angular.module('customActions').component('customAction', {
+angular.module('customActions', []).component('customAction', {
   bindings: {
     name: '@',
     label: '@',
