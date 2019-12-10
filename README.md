@@ -78,3 +78,5 @@ app.component('prmActionListAfter', {
 1. Clone the repo
 2. Run `npm install`
 3. Run `npm test` -->
+
+[More detailed documentation is available here](https://docs.google.com/document/d/1gTehnrMMS66tnhfkWbGiGG4fbsNTrZOtOzf5EzVjdOU/edit) on how to link to a specific Primo Record in various reporting systems such as Google Docs, Survey Monkey, and Qualitrics.
