@@ -49,11 +49,13 @@ You can add new actions by adding `<custom-action>` elements to the template of 
 
 ### Templating
 
-You can create interpolation expressions using `{ }` in the link text and they will be replaced with corresponding values taken from the item - for example, `{pnx.search.recordid[0]}` would become the recordID of the item, taken from the pnx.
+You can create interpolation expressions using `{ }` in the link text and they will be replaced with corresponding values taken from the item - for example, `{pnx.control.recordid[0]}` would become the recordID of the item, taken from the pnx.
 
 ### Example
 
 The example below will generate a configuration similar to that visible in the screenshot above. It adds a "report problem" link that will navigate to the institution's "report problem" form and append the record ID as a GET parameter, and a link that will open the given record's PNX for viewing.
+
+**Update 2020-08-18:** The previous example node for record IDs, pnx.search.recordid[0], contains long random strings for CDI records instead of the ID used in permalinks. PCSG suggests using pnx.control.recordid[0] instead.
 
 ```js
 var app = angular.module('viewCustom', ['customActions'])
@@ -64,13 +66,13 @@ app.component('prmActionListAfter', {
                             index=8
                             icon="ic_find_in_page_24px"
                             icon-set="action"
-                            link="/primo_library/libweb/jqp/record/{pnx.search.recordid[0]}.pnx" />
+                            link="/primo_library/libweb/jqp/record/{pnx.control.recordid[0]}.pnx" />
             <custom-action  name="report_bug"
                             label="Report Bug"
                             index=7
                             icon="ic_bug_report_24px"
                             icon-set="action"
-                            link="http://my.institution.edu/report_problem?record_id={pnx.search.recordid[0]}" />`
+                            link="http://my.institution.edu/report_problem?record_id={pnx.control.recordid[0]}" />`
 })
 ```
 
